@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -9,11 +10,17 @@ public class Main {
 
         System.out.println("Insira os movimentos que pretende realizar?\nN- Norte\nS- Sul\nO- Oeste\nE- Este");
 
+        input = inputString();
 
     }
 
-    public static void inputString(){
+    public static String inputString(){
 
-        String input = sc.nextLine();
+        try{
+            String input = sc.nextLine();
+        }catch(InputMismatchException ex){
+            System.out.println("Insira apenas:\nN- Norte\nS- Sul\nO- Oeste\nE- Este");
+        }
+        return null;
     }
 }
